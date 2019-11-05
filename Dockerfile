@@ -65,7 +65,7 @@ RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && dpkg-reconfigure 
     echo "screenfetch" >> /etc/bash.bashrc && \
     echo "2" | update-alternatives --config x-terminal-emulator
     
-RUN systemctl restart xrdp
+RUN service xrdp restart
 
 EXPOSE 3389 22
 CMD    ["/usr/sbin/sshd", "-D"]
